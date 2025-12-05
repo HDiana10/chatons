@@ -38,10 +38,11 @@ module rotor#(
             notch_pulse_out <= 1'b0;
         end 
         else if (step_enable_in) begin
-            if (current_pos_out == NOTCH_POS+1)
+            if (current_pos_out == NOTCH_POS)
                 notch_pulse_out <= 1'b1;   // ii ziceam rotorului2 sa se roteasca
             else
                 notch_pulse_out <= 1'b0;
+                
             if (current_pos_out == 25) 
                 current_pos_out <= 0;
             else 
